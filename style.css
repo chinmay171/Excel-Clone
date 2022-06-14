@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+}
+
+.menu-option{
+    border: 0.5px solid;
+    height: 50px;
+}
+
+.address-content{
+    border: 0.5px solid;
+    height: 50px;
+}
+
+.cells-content{
+    border: 0.5px solid;
+    background-color: aqua;
+    height: 87.7vh;
+    overflow: auto;
+}
+
+.sheets{
+    border: 0.5px solid;
+    height: 50px;
+}
+
+.row{
+    display: flex;
+}
+
+.cell{
+    border: 0.25px solid;
+    height: 30px;
+    width: 120px
+    /* padding : 15px; */
+}
