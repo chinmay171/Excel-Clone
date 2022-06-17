@@ -27,17 +27,35 @@
             formulaInput.value = cellObject.formula;
         })
 
-    allCell[i].addEventListener("blur",function(e){
-        lastSelectedCell = e.target;
-        let cellValue = e.target.textContent;
-        let {rowId,colId} = getRowIdColIdFromElement(e.target);
-        let cellObject = db[rowId][colId];
-        if(cellObject.value == cellValue){
-            return;
-        }
-        cellObject.value = cellValue;
-        // console.log("After UPdate",cellObject);
-    })
+        allCell[i].addEventListener("blur",function(e){
+            lastSelectedCell = e.target;
+            let cellValue = e.target.textContent;
+            let {rowId,colId} = getRowIdColIdFromElement(e.target);
+            let cellObject = db[rowId][colId];
+            if(cellObject.value == cellValue){
+                return;
+            }
+            cellObject.value = cellValue;
+            // console.log("After UPdate",cellObject);
+            updateChildCellObject(cellObject);
+        })
+
+        allCell[i].addEventListener("keydown", function(e){
+            if(e.key = 'backspace'){
+                let cell = e.target;
+                let {rowId, colId} = getRowIdColIdFromElement(cell);
+                let cellObject = db[rowId][colId];
+                if(cellObject.formula){
+                    cellObject.formula = "";
+
+                    formulaInput.value = "";
+                    cell.textContent = "";
+                    removeParentChild(cellObject);
+                    // let parentObject = cellObject.parent;
+                    // console.log(parentObject);
+                }
+            }
+        })
 }
 
 formulaInput.addEventListener("blur", function(e){
@@ -45,10 +63,11 @@ formulaInput.addEventListener("blur", function(e){
     if(formula){
         let {rowId, colId} = getRowIdColIdFromElement(lastSelectedCell);
         cellObject = db[rowId][colId];
-        let computedValue = solveFormula(formula);
+        let computedValue = solveFormula(formula, cellObject);
         cellObject.value = computedValue;
         cellObject.formula = formula;
 
         lastSelectedCell.textContent = computedValue;
+        updateChildCellObject(cellObject);
     }
 })
