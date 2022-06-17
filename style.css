@@ -1,29 +1,30 @@
 *{
     margin: 0px;
     padding: 0px;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 .menu-option{
-    border: 0.5px solid;
-    height: 50px;
+    border-bottom: 0.5px solid;
+    height: 40px;
 }
 
 .address-content{
-    border: 0.5px solid;
-    height: 50px;
+    border-bottom: 0.1px solid;
+    height: 20px;
 }
 
 .cells-content{
-    border: 0.5px solid;
-    background-color: aqua;
-    height: 87.7vh;
+    height: 85vh;
+    background-color: cyan;
+    position: relative;
     overflow: auto;
 }
 
 .sheets{
-    border: 0.5px solid;
-    height: 50px;
+    border-top: 0.5px solid;
+    height: 32px;    
+    /* background-color: black; */
 }
 
 .row{
@@ -31,8 +32,88 @@
 }
 
 .cell{
-    border: 0.25px solid;
-    height: 30px;
-    width: 120px
-    /* padding : 15px; */
+    border-bottom: 0.1px solid;
+    border-left: 0.1px solid;
+    min-height: 20px;
+    width: 100px;
+    outline: none;
+}
+
+.top-left-cell{
+    /* border-right: 0.1px solid; */
+    /* border-top: 0.1px solid; */
+    border-bottom: 0.1px solid;
+    height: 20px;
+    width: 40px;
+    background-color: grey;
+    position: absolute;
+    z-index: 2;
+
+}
+
+
+.top-row{
+    display: flex;
+    position: absolute;
+    background-color: grey;
+    left: 40px;
+    z-index: 1;
+    /* border-top: 0.1px solid; */
+}
+
+.top-row-cell{
+    height: 20px;
+    width: 100px;
+    border-bottom: 0.1px solid;
+    border-left: 0.1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-col{
+    background-color: grey;
+    position: absolute;
+    left: 0px;
+    top:20px;
+    z-index: 1;
+}
+
+.left-col-cell{
+    height: 20px;
+    width: 40px;
+    border-bottom: 0.1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cells{
+    position: absolute;
+    top:20px;
+    left:40px;
+}
+
+#address{
+    text-align: center;
+    font-size: large;
+    width: 60px;
+    border-bottom: 0.1px solid;
+    outline: none;
+    border: none;
+    background-color:bisque;
+    /* z-index: 0.5; */
+}
+
+#formula{
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    outline: none;
+    border-right: 0.1px solid;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1220px;
 }
