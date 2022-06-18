@@ -5,12 +5,14 @@ function initCells(){
     let cellContent= "<div class = 'top-left-cell'></div>";
     cellContent+="<div class = 'top-row'>";
     for(let i = 0; i<26; ++i){
-        cellContent+= `<div class = 'top-row-cell'>${String.fromCharCode(65+i)}</div>`;
+        // cellContent+=`<div class='top-row-cell' trid='${i}'>${String.fromCharCode(65+i)}</div>`;
+        cellContent+=`<div class='top-row-cell' trid='${i}'>${String.fromCharCode(65+i)}</div>`;
     }
     cellContent+="</div>";
     cellContent+="<div class = 'left-col'>";
     for(let i = 0; i<100; ++i){
-        cellContent+=  `<div class = 'left-col-cell'>${i+1}</div>`;
+        // cellContent+=`<div class='left-col-cell' lcid='${i}'>${i+1}</div>`;
+        cellContent+=`<div class='left-col-cell' lcid='${i}'>${i+1}</div>`
     }
     cellContent+="</div>";
     cellContent+="<div class= 'cells'>";
@@ -27,11 +29,11 @@ function initCells(){
 }
 
 initCells();
-
+let sheetDB = [];
 let db;
-
+let visitedCells;
 function initDb(){
-    db = [];
+    let newSheetDB = [];
     for(let i = 0; i<100; ++i){
         let row = [];
         for(let j = 0; j<26; ++j){
@@ -41,11 +43,16 @@ function initDb(){
                 value : "",
                 formula : "",
                 children : [],
-                parent : []
+                parent : [],
+                visisted : false,
+                fontStyle : {"bold": false, "italic": false, "underline": false}
             }
             row.push(cellObject);
         }
-        db.push(row);
+        newSheetDB.push(row);
     }
+    visitedCells = [];
+    db = newSheetDB;
+    sheetDB.push({db : newSheetDB, visitedCells : visitedCells});
 }
 initDb();

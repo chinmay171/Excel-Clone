@@ -148,10 +148,46 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    cursor: pointer;
 }
 
 .active-sheet{
     background-color: white;
     font-weight: bold;
 } 
+
+.font-style{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 160px;
+    height: 100%;
+    border-right: 1px solid lightgray;
+}
+
+.font-style div{
+    cursor: pointer;
+    width : 25px;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.font-style div:hover{
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+.active-font-style{
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+.active-cell{
+    border: 2.5px solid rgb(0, 235, 0);
+}
+
+.active-row-col{
+    background-color: lightgray;
+}
