@@ -1,6 +1,6 @@
 :root{
-    --border-color:rgb(235, 235, 235);
-    --cell-background:rgb(245, 245, 245);
+    --border-color:rgb(225, 225, 225);
+    --cell-background:rgb(240, 240, 240);
 }
 
 *{
@@ -14,7 +14,8 @@
 .menu-option{
     /* border-bottom: 0.5px solid var(--border-color); */
     height: 40px;
-    background-color: var(--cell-background);
+    /* background-color: var(--cell-background); */
+    background-color: #1D6F42;
 }
 
 .address-content{
@@ -28,10 +29,11 @@
     background-color: white;
     position: relative;
     overflow: auto;
+    /* border-bottom: 0.1px solid lightgray; */
 }
 
 .sheets{
-    border-top: 0.5px solid;
+    /* border-top: 0.5px solid; */
     /* border-bottom: 0.1px solid black; */
     height: 30px;    
     background-color: var(--cell-background);
@@ -131,14 +133,16 @@
 }
 
 .add-sheets{
-    color : rgb(0, 235, 0);
+    background-color: #1D6F42;
+    color : white;
     width: 30px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-right: 0.1px solid lightgray;
-    font-size: 12px;
+    border-top: 0.1px solid lightgray;
+    font-size: 14px;
 }
 
 .sheet{
@@ -149,11 +153,15 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border-top: 0.1px solid lightgray;
 }
 
 .active-sheet{
     background-color: white;
     font-weight: bold;
+    color:#1D6F42;
+    border-top: none;
+    font-weight: 5000;
 } 
 
 .font-style{
@@ -161,7 +169,7 @@
     justify-content: space-around;
     align-items: center;
     width: 160px;
-    height: 100%;
+    height: 40px;
     border-right: 1px solid lightgray;
 }
 
@@ -172,22 +180,83 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    border-radius: 5px;
 }
 
 .font-style div:hover{
-    background-color: lightgray;
+    background-color: var(--cell-background);
     border-radius: 5px;
 }
 
 .active-font-style{
-    background-color: lightgray;
+    background-color: var(--cell-background);
     border-radius: 5px;
 }
 
 .active-cell{
-    border: 2.5px solid rgb(0, 235, 0);
+    border: 1.5px solid #1D6F42;
 }
 
 .active-row-col{
     background-color: lightgray;
+}
+
+.font-align{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 160px;
+    top: 0px;
+    height: 40px;
+    width: 160px;
+    border-right: 1px solid lightgray;
+    font-size: 15px;
+}
+
+.font-align div{
+    cursor: pointer;
+    width: 25px;
+    height: 60%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.font-align div:hover{
+    background-color: var(--cell-background);
+    border-radius: 5px;
+}
+
+.font-set{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 320px;
+    top: 0px;
+    height: 40px;
+    width: 160px;
+    border-right: 1px solid lightgray;
+    font-size: 15px;
+    /* background-color: aliceblue; */
+}
+
+.font-set div{
+    cursor: pointer;
+    width: 25px;
+    height: 60%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.font-set div:hover{
+    background-color: var(--cell-background);
+    border-radius: 5px;
 }
